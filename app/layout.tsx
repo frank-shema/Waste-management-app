@@ -26,11 +26,11 @@ export default function RootLayout({
         if (userEmail) {
           const user = await getUserByEmail(userEmail)
           console.log('user from layout', user);
-          
+
           if (user) {
             const availableRewards = await getAvailableRewards(user.id) as any
             console.log('availableRewards from layout', availableRewards);
-                        setTotalEarnings(availableRewards)
+            setTotalEarnings(availableRewards)
           }
         }
       } catch (error) {

@@ -5,11 +5,11 @@ import Link from "next/link"
 import { usePathname } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Menu, Coins, Leaf, Search, Bell, User, ChevronDown, LogIn, LogOut } from "lucide-react"
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
 import { Web3Auth } from "@web3auth/modal"
@@ -57,7 +57,7 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
   const [balance, setBalance] = useState(0)
 
   console.log('user info', userInfo);
-  
+
   useEffect(() => {
     const init = async () => {
       try {
@@ -191,7 +191,7 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
 
   const handleNotificationClick = async (notificationId: number) => {
     await markNotificationAsRead(notificationId);
-    setNotifications(prevNotifications => 
+    setNotifications(prevNotifications =>
       prevNotifications.filter(notification => notification.id !== notificationId)
     );
   };
@@ -247,7 +247,7 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
             <DropdownMenuContent align="end" className="w-64">
               {notifications.length > 0 ? (
                 notifications.map((notification) => (
-                  <DropdownMenuItem 
+                  <DropdownMenuItem
                     key={notification.id}
                     onClick={() => handleNotificationClick(notification.id)}
                   >

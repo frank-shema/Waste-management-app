@@ -145,7 +145,7 @@ export default function ReportPage() {
                     console.error('Invalid verification result:', parsedResult);
                     setVerificationStatus('failure');
                 }
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
             } catch (error) {
                 console.error('Failed to parse JSON response:', text);
                 setVerificationStatus('failure');

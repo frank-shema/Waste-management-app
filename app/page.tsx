@@ -1,14 +1,14 @@
 // @ts-nocheck
 'use client'
 import { useState, useEffect } from 'react'
-import { ArrowRight, Leaf, Recycle, Users, Coins, MapPin} from 'lucide-react'
+import { ArrowRight, Leaf, Recycle, Users, Coins, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Poppins } from 'next/font/google'
 import Link from 'next/link'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import ContractInteraction from '@/components/ContractInteraction'
 import { getRecentReports, getAllRewards, getWasteCollectionTasks } from '@/utils/db/actions'
-const poppins = Poppins({ 
+const poppins = Poppins({
   weight: ['300', '400', '600'],
   subsets: ['latin'],
   display: 'swap',
@@ -35,7 +35,7 @@ export default function Home() {
     co2Offset: 0
   });
 
-  
+
 
   useEffect(() => {
     async function fetchImpactData() {
@@ -103,7 +103,7 @@ export default function Home() {
           </Link>
         )}
       </section>
-      
+
       <section className="grid md:grid-cols-3 gap-10 mb-20">
         <FeatureCard
           icon={Leaf}
@@ -121,7 +121,7 @@ export default function Home() {
           description="Be part of a growing community committed to sustainable practices."
         />
       </section>
-      
+
       <section className="bg-white p-10 rounded-3xl shadow-lg mb-20">
         <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">Our Impact</h2>
         <div className="grid md:grid-cols-4 gap-6">
@@ -132,14 +132,14 @@ export default function Home() {
         </div>
       </section>
 
-   
+
     </div>
   )
 }
 
 function ImpactCard({ title, value, icon: Icon }: { title: string; value: string | number; icon: React.ElementType }) {
   const formattedValue = typeof value === 'number' ? value.toLocaleString('en-US', { maximumFractionDigits: 1 }) : value;
-  
+
   return (
     <div className="p-6 rounded-xl bg-gray-50 border border-gray-100 transition-all duration-300 ease-in-out hover:shadow-md">
       <Icon className="h-10 w-10 text-green-500 mb-4" />
