@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast'
 import Image from 'next/image';
 
+
 const geminiApiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
@@ -144,6 +145,7 @@ export default function ReportPage() {
                     console.error('Invalid verification result:', parsedResult);
                     setVerificationStatus('failure');
                 }
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             } catch (error) {
                 console.error('Failed to parse JSON response:', text);
                 setVerificationStatus('failure');
