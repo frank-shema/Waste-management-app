@@ -4,7 +4,6 @@ import { MapPin, Upload, CheckCircle, Loader } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { StandaloneSearchBox, useJsApiLoader } from '@react-google-maps/api'
-import { Libraries } from '@react-google-maps/api';
 import { createUser, getUserByEmail, createReport, getRecentReports } from '@/utils/db/actions';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast'
@@ -14,7 +13,8 @@ import Image from 'next/image';
 const geminiApiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
-const libraries: Libraries = ['places'];
+
+const libraries: ('places' | 'geometry' | 'drawing' | 'localContext' | 'visualization')[] = ['places'];
 
 export default function ReportPage() {
     const [user, setUser] = useState<{ id: number; email: string; name: string } | null>(null);
